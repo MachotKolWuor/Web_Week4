@@ -1,0 +1,115 @@
+:root{
+    --brand-color: #4f46e5;
+    --accent-color: #14b8a6;
+    --surface-color: #ffffff;
+    --bg-color: #f8f9ff;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --border-color: #e5e7eb;
+    --shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+*{box-sizing: border-box; margin: 0; padding: 0;}
+body{
+    font-family: Inter, system-ui, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-primary);
+}
+/* TASK 2: CSS GRID FOR overall page layout */
+.dashboard{
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    grid-template-areas: "sidebar header" "sidebar content";
+    min-height: 100vh;
+}
+.sidebar{
+    grid-area: sidebar;
+    background: var(--surface-color);
+    border-right: 1px solid var(--border-color);
+    padding: 1.5rem;
+    display:flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.main-header{
+    grid-area: header;
+    background: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.2rem 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content{
+    grid-area: content;
+    padding: 1.8rem;
+}
+/* TASK 2:FLEXBOX for inside header, sidebar, cards */
+.logo{font-weight: 800; font-size: 1.25rem; color: var(--brand-color); }
+.sidebar-nav{ display: flex; flex-direction: column; gap: 0.5rem; }
+.nav-item{ text-decoration: none; color: var(--text-secondary); padding: 0.7rem 0.8rem; border-radius: 8px; display: flex; gap: 0.rem; }
+.nav-item.active, .nav-item:hover{ background: var(--bg-color); color: var(--brand-color); }
+
+.header-right{ display: flex; align-items: center; gap: 1rem; }
+.search{ padding: 0.6rem 1rem; border: 1px solid var(--border-color); border-radius: 999px; background: var(--bg-color); min-width: 220px; }
+.avatar{ width: 36px; height: 36px; background: var(--brand-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+
+.summary-row{ display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.summary-card{ background: var(--surface-color); padding: 1rem 1.2rem; border-radius: 12px; box-shadow: var(--shadow); display: flex; flex-direction: column; min-width: 180px; }
+.cards-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+}
+
+.card{
+    background: var(--surface-color);
+    padding: 1.2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.card-top{ display: flex; justify-content: space-between; align-items: center; }
+.progress{ height: 6px; background: var(--bg-color); border-radius: 999px; overflow: hidden; }
+.progress span{ display: block; height: 100%; background: var(--brand-color); border-radius: 999px; }
+.trend{ font-size: 0.75rem; padding: 2px 8px; border-radius: 999px; background: var(--bg-color); }
+.trend.up{ color: #059669; background: #ecfdf5; }
+.trend.down{ color: #dc2626; background: #fef2f2; }
+
+/* TASK 5:Card Micro-interactions - must be 250ms or less */
+.card:hover, .card:focus-within{
+    transform: translate(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+    outline: none;
+}
+/* TASK 4: Make it responsive - single column below 768px 8/
+@media (max-width: 768px){
+.dashboard{
+grid-template-column: 1fr;
+grid-template-areas:
+
+"sidebar"
+"header"
+"content";
+}
+.sidebar{ flex-direction: row; overflow-x:auto; }
+.sidebar-nav{ flex-direction: row; }
+.main-header{ flex-direction: column; align-items: flex-start; gap:1rem; }
+.cards-grid{ grid-template-columns: 1fr; }
+}
+
+/* STRETCH GOAL : Dark them - override only : root variable */
+@media (prefers-color-scheme: dark){
+    :root{
+        --surface-color: #1f2937;
+        --bg-color: #111827;
+        --text-primary: #f9fafb;
+        --text-secondary: #9ca3af;
+        --border-color: #374151;
+        --shadow:0 4px 12px rgba(0,0,0,0.3);
+    }
+}
+

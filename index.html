@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spendwise Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="Dashboard">
+        <!---SIDEBAR / NAVIGATION MENU -->
+        <aside class="sidebar">
+            <div class="logo">Spendwise</div>
+            <nav class="sidebar-nav">
+                <a class="nav-item active" href="#">Dashboard</a>
+                <a class="nav-item" href="#">Transaction</a>
+                <a class="nav-item" href="#">Budgets</a>
+                <a class="nav-item" href="#">Reports</a>
+                <a class="nav-item" href="#">Settings</a>
+
+            </nav>
+            <div class="sidebar-footer">
+                <p>Monthly Budget</p>
+                <div class="progress"><span style="width:68%"></span></div>
+                <small>Ksh 34,000 / 50,000</small>
+
+            </div>
+
+        </aside>
+        <!-- 2. HEADER -->
+         <header class="main-header">
+            <div class="header-left">
+                <h1>My Dashboard</h1>
+                <p>Welcome back, track your spendind</p>
+
+            </div>
+            <div class="header-right">
+                <input class="search" placeholder="search expenses..."/>
+                <button class="icon-btn"></button>
+                <div class="avatar">AK</div>
+
+            </div>
+
+         </header>
+         <!-- 3. MAIN CONTENT -->
+          <main class="content">
+            <section class="summary-row">
+                <div class="summary-card">
+                    <span>Total Balance</span>
+                    <strong>Ksh 128,500</strong>
+
+                </div>
+                <div class="summary-card">
+                    <span>Monthly Spend</span>
+                    <strong>Ksh 34,250</strong>
+
+                </div>
+
+            </section>
+            <!-- 4. AT LEAST 6 CATEGORY CARDS - REQUIRED -->
+             <section class="cards-grid">
+                <article class="card" tabindex="0">
+                    <div class="card-top"><span class="card-icon"></span><span class="trend up">+5%</span></div>
+                    <h3>Food</h3>
+                    <p class="amount">Ksh 8,500</p>
+                    <div class="progress"><span style="width:65%"></span></div>
+                    <small>65% of budget</small>
+
+                </article>
+                <article class="card" tabindex="0">
+                    <div class="card-top"><span class="card-icon"></span><span class="trend">0%</span></div>
+                    <h3>Transport</h3>
+                    <p class="amount">Ksh 4,200</p>
+                    <div class="progress"><span style="width:42%"></span></div>
+                    <small>42% of budget</small>
+
+                </article>
+                <article class="card" tabindex="0">
+                    <div class="card-top"><span class="card-top"></span><span class="trend">0%</span></div>
+                    <h3>Rent</h3>
+                    <p class="amount">Ksh 15,000</p>
+                    <div class="progress"><span style="width:100%"></span></div>
+                    <small>Paid this month</small>
+
+                </article>
+                <article class="card" tabindex="0">
+                    <div class="card-top"><span class="card-icon"></span><span class="trend up">+12%</span></div>
+                    <h3>Entertainment</h3>
+                    <p class="amount">Ksh 3,200</p>
+                    <div class="progress"><span style="width:32%"></span></div>
+                    <small>32% of budget</small>
+
+                </article>
+                <article class="card" tabindex="0">
+                    <div class="card-top"><span class="card-icon"></span><span class="trend up">+8%</span></div>
+                    <h3>savings</h3>
+                    <p class="amount">Ksh 12,000</p>
+                    <div class="progress"><span style="width:80%"></span></div>
+                    <small>80% of goal</small>
+
+                </article>
+                <article class="card" tabindex="0">
+                    <div class="card-top"><span class="card-icon"></span><span class="trend down">-4%</span></div>
+                    <h3>Utilities</h3>
+                    <p class="amount">Ksh 2,800</p>
+                    <div class="progress"><span style="width:28%"></span></div>
+                    <small>28% of budget</small>
+
+                </article>
+
+             </section>
+
+          </main>
+
+
+    </div>
+    
+</body>
+</html>
